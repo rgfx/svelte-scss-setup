@@ -1,0 +1,31 @@
+/*********************
+Media Queries
+*********************/
+
+@mixin bp($point) {
+  @if $point==full {
+    @media (min-width: 1366px) {
+      @content;
+    }
+  } @else if $point==medium {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $point==small {
+    @media (min-width: 550px) {
+      @content;
+    }
+  }
+}
+/*********************
+Animations
+*********************/
+
+@mixin disableTapHighlightColor() {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+//improve performance when doing transitions
+@mixin hardwareAccel() {
+  transform: translateZ(0);
+}
